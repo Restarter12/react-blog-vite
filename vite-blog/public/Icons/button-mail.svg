@@ -1,0 +1,21 @@
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40.000000" height="40.000000" fill="none" customFrame="url(#clipPath_6)">
+	<defs>
+		<clipPath id="clipPath_6">
+			<rect width="40.000000" height="40.000000" x="0.000000" y="0.000000" rx="20.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+		<clipPath id="clipPath_7">
+			<rect width="24.000000" height="24.000000" x="8.000000" y="8.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+		<clipPath id="clipPath_8">
+			<rect width="24.000000" height="24.000000" x="8.000000" y="8.000000" fill="rgb(255,255,255)" />
+		</clipPath>
+	</defs>
+	<rect id="Button" width="40.000000" height="40.000000" x="0.000000" y="0.000000" rx="20.000000" fill="rgb(67.1323,69.1794,77.3677)" />
+	<g id="icon-mail" customFrame="url(#clipPath_7)">
+		<rect id="icon-mail" width="24.000000" height="24.000000" x="8.000000" y="8.000000" fill="rgb(255,255,255)" fill-opacity="0" />
+		<g id="icon-mail" clip-path="url(#clipPath_8)" customFrame="url(#clipPath_8)">
+			<rect id="icon-mail" width="24.000000" height="24.000000" x="8.000000" y="8.000000" />
+			<path id="Shape" d="M9.00001 13.9827C8.99985 13.9925 8.99984 14.0024 8.99996 14.0122L8.99996 26C8.99996 27.6523 10.3477 29 12 29L28 29C29.6523 29 31 27.6523 31 26L31 14.0124C31.0001 14.0024 31.0001 13.9925 30.9999 13.9825C30.9904 12.3382 29.6464 11 28 11L12 11C10.3535 11 9.0094 12.3383 9.00001 13.9827ZM11.1065 13.5539C11.2719 13.2269 11.612 13 12 13L28 13C28.3879 13 28.728 13.2269 28.8934 13.5539L20 19.7793L11.1065 13.5539ZM29 15.9207L29 26C29 26.5477 28.5477 27 28 27L12 27C11.4522 27 11 26.5477 11 26L11 15.9207L19.4265 21.8192C19.7708 22.0603 20.2291 22.0603 20.5734 21.8192L29 15.9207Z" fill="rgb(18,247,214)" fill-rule="evenodd" />
+		</g>
+	</g>
+</svg>
