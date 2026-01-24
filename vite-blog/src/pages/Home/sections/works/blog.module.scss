@@ -1,6 +1,10 @@
 .blog {
 	.blogBlock {
 		padding: 0 306px;
+
+		@media (max-width: 1024px) {
+			padding: 0 128px;
+		}
 		.blogHeadingBlock {
 			display: flex;
 			flex-direction: column;

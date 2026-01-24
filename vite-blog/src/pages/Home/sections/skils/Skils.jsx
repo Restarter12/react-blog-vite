@@ -77,7 +77,6 @@ const Skils = () => {
             </div>
           </div>
 
-          {/* Иконки навыков */}
           <div className={style.skilsBlockWorkImage}>
             <div ref={el => cardsRef.current[2] = el} className={style.skilsBlockWorkImageItem}>
               <img src="./html.png" alt="HTML" />

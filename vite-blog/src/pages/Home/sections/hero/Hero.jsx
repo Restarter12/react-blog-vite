@@ -22,7 +22,7 @@ const Hero = () => {
 	}
 
 	useEffect(() => {
-		
+
 		gsap.set(
 			[
 				headingRef.current,
@@ -130,44 +130,46 @@ const Hero = () => {
 
 							<div ref={centerRef} className={style.heroBlockDeveloper}>
 								<div className={style.heroBlockDeveloperHedingBlock}>
-									<span className={style.heroBlockDeveloperSpanStart}>&lt;h1&gt;</span>
-									<h2 className={style.heroBlockDeveloperHeading}>
-										Hey <br /> I’m <span className={style.heroBlockDeveloperHeadingSpan}>Askhab</span>, <br />
-										Front-end developer
-										<span className={style.heroBlockDeveloperSpanClose}>&lt;/h1&gt;</span>
-									</h2>
-								</div>
+									<div className="heroBlockDeveloperHedingBlockText">
+										<span className={style.heroBlockDeveloperSpanStart}>&lt;h1&gt;</span>
+										<h2 className={style.heroBlockDeveloperHeading}>
+											Hey <br /> I’m <span className={style.heroBlockDeveloperHeadingSpan}>Askhab</span>, <br />
+											Front-end developer
+											<span className={style.heroBlockDeveloperSpanClose}>&lt;/h1&gt;</span>
+										</h2>
+									</div>
 
-								<div className={style.heroBlockDeveloperParagraphBlock}>
-									<span className={style.heroBlockDeveloperParagraphSpan}>&lt;p&gt;</span>
-									<p className={style.heroBlockDeveloperParagraph}>
-										I help business grow by crafting amazing web experiences. If you’re looking for a developer that likes to get stuff done,
+									<div className={style.heroBlockDeveloperParagraphBlock}>
+										<span className={style.heroBlockDeveloperParagraphSpan}>&lt;p&gt;</span>
+										<p className={style.heroBlockDeveloperParagraph}>
+											I help business grow by crafting amazing web experiences. If you’re looking for a developer that likes to get stuff done,
+										</p>
+										<span className={style.heroBlockDeveloperParagraphSpan}>&lt;/p&gt;</span>
+
+										<button
+											onClick={() => scrollContact('contact')}
+											className={style.heroBlockDeveloperParagraphBtn}
+										>
+											Let's Talk <img src="./Icons/button-mail.svg" alt="mail icon" />
+										</button>
+									</div>
+								</div>
+								<div ref={bottomRef} className={style.heroBlockDeveloperSkils}>
+									<p className={style.heroBlockDeveloperSkilsParag}>
+										<span className={style.heroBlockDeveloperSkilsSpan}>4</span>
+										Programming Language
 									</p>
-									<span className={style.heroBlockDeveloperParagraphSpan}>&lt;/p&gt;</span>
-
-									<button
-										onClick={() => scrollContact('contact')}
-										className={style.heroBlockDeveloperParagraphBtn}
-									>
-										Let's Talk <img src="./Icons/button-mail.svg" alt="mail icon" />
-									</button>
+									<p className={style.heroBlockDeveloperSkilsParag}>
+										<span className={style.heroBlockDeveloperSkilsSpan}>6</span>
+										Development Tools
+									</p>
+									<p className={style.heroBlockDeveloperSkilsParag}>
+										<span className={style.heroBlockDeveloperSkilsSpan}>8</span>
+										Years of Experience
+									</p>
 								</div>
 							</div>
 
-							<div ref={bottomRef} className={style.heroBlockDeveloperSkils}>
-								<p className={style.heroBlockDeveloperSkilsParag}>
-									<span className={style.heroBlockDeveloperSkilsSpan}>4</span>
-									Programming Language
-								</p>
-								<p className={style.heroBlockDeveloperSkilsParag}>
-									<span className={style.heroBlockDeveloperSkilsSpan}>6</span>
-									Development Tools
-								</p>
-								<p className={style.heroBlockDeveloperSkilsParag}>
-									<span className={style.heroBlockDeveloperSkilsSpan}>8</span>
-									Years of Experience
-								</p>
-							</div>
 
 						</div>
 					</div>

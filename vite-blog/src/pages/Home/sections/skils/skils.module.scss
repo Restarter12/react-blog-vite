@@ -3,7 +3,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	
+
 	.skilsBlock {
 		.skilsBlockHeading {
 			display: flex;
@@ -118,12 +118,23 @@
 			justify-content: center;
 			gap: 128px;
 			padding-bottom: 128px;
+
+			@media (max-width: 1024px) {
+				padding: 0 120px;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, 1fr);
+				grid-column-gap: 0px;
+				grid-row-gap: 32px;
+				padding-bottom: 64px;
+			}
+
 			.skilsBlockWorkImageItem {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				gap: 24px;
-				
+
 			}
 		}
 	}

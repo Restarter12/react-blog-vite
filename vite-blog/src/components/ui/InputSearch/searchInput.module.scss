@@ -5,4 +5,7 @@
 	border: none;
 	margin-right: 64px;
 	padding: 6px 16px;
+	@media (max-width: 1024px) {
+		display: none;
+	}
 }
