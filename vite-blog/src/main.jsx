@@ -7,10 +7,10 @@ import { SearchProvider } from './context/SearchContext'
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <SearchProvider>
         <MainRoutes />
       </SearchProvider>
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>
 )
