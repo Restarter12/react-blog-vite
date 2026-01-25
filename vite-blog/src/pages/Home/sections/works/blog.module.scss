@@ -1,0 +1,97 @@
+.blog {
+	.blogBlock {
+		padding: 0 306px;
+
+		@media (max-width: 1024px) {
+			padding: 0 128px;
+		}
+		.blogHeadingBlock {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 16px;
+
+			.blogHeading {
+				color: rgba(18, 247, 214, 1);
+
+				font-family: Ubuntu;
+				font-style: Regular;
+				font-size: 64px;
+				font-weight: 400;
+				line-height: 72px;
+				letter-spacing: 0%;
+				text-align: left;
+				text-transform: capitalize;
+			}
+
+			.blogParag {
+				color: rgba(255, 255, 255, 1);
+
+				font-family: IBM Plex Mono;
+				font-style: Regular;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 20px;
+				letter-spacing: 0%;
+				text-align: center;
+			}
+		}
+
+
+		.blogContent {
+			padding-top: 64px;
+			.blogBlockLine {
+				border: 1px solid var(--White, rgba(255, 255, 255, 1));
+				width: 1052px;
+				margin: 64px 0;
+			}
+
+		}
+
+		.blogBtn {
+			display: flex;
+			gap: 32px;
+			justify-content: center;
+			padding-bottom: 100px;
+			padding-top: 64px;
+
+			.blogBtnMore {
+				color:  rgba(41, 47, 54, 1);
+
+				font-family: Ubuntu;
+				font-style: Regular;
+				font-size: 20px;
+				font-weight: 400;
+				line-height: 24px;
+				letter-spacing: 0%;
+				text-align: left;
+				text-transform: capitalize;
+				padding: 16px 32px;
+
+
+				border-radius: 32px;
+				background: rgba(18, 247, 214, 1);
+
+			}
+
+			.blogBtnSubscribe {
+				color: var(--White, rgba(255, 255, 255, 1));
+
+				font-family: Ubuntu;
+				font-style: Regular;
+				font-size: 20px;
+				font-weight: 400;
+				line-height: 24px;
+				letter-spacing: 0%;
+				text-align: left;
+				text-transform: capitalize;
+				padding: 16px 32px;
+
+				box-sizing: border-box;
+				border: 2px solid rgba(18, 247, 214, 1);
+				border-radius: 32px;
+				background: rgba(41, 47, 54, 1);
+			}
+		}
+	}
+}

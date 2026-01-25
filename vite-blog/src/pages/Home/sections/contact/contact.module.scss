@@ -1,0 +1,130 @@
+.contact {
+	background: rgba(26, 30, 35, 1);
+
+	.contactBlock {
+		.contactBlockHeadnig {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 16px;
+			padding-bottom: 102px;
+
+			.contactHeading {
+				color: rgba(18, 247, 214, 1);
+				font-family: Ubuntu;
+				font-size: 64px;
+				font-weight: 400;
+				line-height: 72px;
+				text-transform: capitalize;
+			}
+
+			.contactHeadingParag {
+				color: white;
+				font-family: IBM Plex Mono;
+				font-size: 16px;
+				line-height: 20px;
+				text-align: center;
+			}
+		}
+
+		.contactSendMess {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-bottom: 64px;
+
+			.contactSendMessHeading {
+				color: rgba(18, 247, 214, 1);
+				font-family: IBM Plex Mono;
+				font-size: 32px;
+				font-weight: 500;
+				line-height: 42px;
+				padding: 16px 40px;
+				border: 2px solid rgba(18, 247, 214, 1);
+				border-radius: 32px 0 32px 0;
+				margin-bottom: 64px;
+			}
+
+			.contactSendMessInputs {
+				display: grid;
+				padding: 0 400px;
+				grid-template-columns: 1fr 1fr;
+				gap: 64px;
+				width: 100%;
+				margin-bottom: 64px;
+
+				@media (max-width: 1024px) {
+					padding: 0 200px;
+				}
+			}
+
+			.contactSendMessInputsBlock {
+				display: flex;
+				flex-direction: column;
+				gap: 24px;
+			}
+
+			.contactSendMessInputsParag {
+				color: rgba(18, 247, 214, 1);
+				font-family: Ubuntu;
+				font-size: 16px;
+				line-height: 18px;
+			}
+
+			.contactSendMessInputsName,
+			.contactSendMessInputsEmail,
+			.contactSendMessInputsMessage {
+				width: 100%;
+				background-color: transparent;
+				border: none;
+				border-bottom: 2px solid rgba(152, 250, 236, 1);
+				padding: 12px 4px;
+				color: white;
+				font-family: Ubuntu;
+				font-size: 16px;
+				outline: none;
+			}
+
+			.contactSendMessInputsName::placeholder,
+			.contactSendMessInputsEmail::placeholder,
+			.contactSendMessInputsMessage::placeholder {
+				color: rgba(255, 255, 255, 0.7);
+			}
+
+			.contactSendMessInputsName:focus,
+			.contactSendMessInputsEmail:focus,
+			.contactSendMessInputsMessage:focus {
+				border-bottom-color: rgba(18, 247, 214, 1);
+			}
+
+			/* Третий блок (Message) растягиваем на всю ширину */
+			.contactSendMessInputsBlock:nth-child(3) {
+				grid-column: 1 / -1;
+			}
+
+			.contactSendMessBtn {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+				border-radius: 32px;
+				background: rgba(18, 247, 214, 1);
+				padding: 16px 32px;
+
+				color: rgba(41, 47, 54, 1 );
+
+				font-family: Ubuntu;
+				font-style: Regular;
+				font-size: 20px;
+				font-weight: 400;
+				line-height: 24px;
+				letter-spacing: 0%;
+				text-align: left;
+				text-transform: capitalize;
+
+				&:hover{
+					background-color: white;
+				}
+			}
+		}
+	}
+}
