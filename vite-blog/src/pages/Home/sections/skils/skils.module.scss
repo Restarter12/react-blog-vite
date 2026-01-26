@@ -149,6 +149,10 @@
 				padding-bottom: 64px;
 			}
 
+			@media (max-width: 700px) {
+				grid-column-gap: 40px;
+			}
+
 			@media (max-width: 425px) {
 				grid-column-gap: 40px;
 			}
