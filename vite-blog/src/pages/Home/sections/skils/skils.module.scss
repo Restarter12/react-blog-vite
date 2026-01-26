@@ -43,6 +43,11 @@
 			gap: 136px;
 			padding-bottom: 90px;
 
+			@media (max-width: 700px) {
+				flex-wrap: wrap;
+				gap: 80px;
+			}
+
 			@media (max-width: 425px) {
 				flex-wrap: wrap;
 				gap: 80px;

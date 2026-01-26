@@ -98,6 +98,10 @@
 				gap: 32px;
 				align-items: center;
 
+				@media (max-width:700px) {
+					display: none;
+				}
+
 				@media (max-width:425px) {
 					display: none;
 				}
