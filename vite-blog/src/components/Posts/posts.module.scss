@@ -1,6 +1,14 @@
 .posts {
 	padding: 0 306px;
 
+	@media (max-width: 1024px) {
+		padding: 0 180px;
+	}
+
+	@media (max-width: 768px) {
+		padding: 0 100px;
+	}
+
 	.postsBlockHeading {
 		display: flex;
 		flex-direction: column;
