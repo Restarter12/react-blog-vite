@@ -5,6 +5,11 @@
 			gap: 64px;
 			padding: 64px 0;
 
+			@media (max-width: 700px) {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
 			@media (max-width: 425px) {
 				flex-wrap: wrap;
 				justify-content: center;
