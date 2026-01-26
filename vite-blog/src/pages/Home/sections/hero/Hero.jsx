@@ -85,48 +85,48 @@ const Hero = () => {
 					<div className={style.container}>
 						<div className={style.heroBlockDeveloperInfo}>
 
-						<div ref={leftRef} className={style.heroBlockInfo}>
-							<div className={style.heroBlockInfoPerson}>
-								<img className={style.heroBlockInfoAvatar} src="./Icons/Profile.svg" alt="avatar" />
-								<p className={style.heroBlockInfoPersonName}>Askhab</p>
-								<p className={style.heroBlockInfoPersonJob}>Front-end developer</p>
-							</div>
+							<div ref={leftRef} className={style.heroBlockInfo}>
+								<div className={style.heroBlockInfoPerson}>
+									<img className={style.heroBlockInfoAvatar} src="./Icons/Profile.svg" alt="avatar" />
+									<p className={style.heroBlockInfoPersonName}>Askhab</p>
+									<p className={style.heroBlockInfoPersonJob}>Front-end developer</p>
+								</div>
 
-							<div className={style.heroBlockInfoAbout}>
-								<p className={style.heroBlockInfoAboutParagraph}>
-									<img src="./Icons/mail.svg" alt="email" />
-									nikitovich60@bk.ru
-								</p>
-								<p className={style.heroBlockInfoAboutParagraph}>
-									<img src="./Icons/map.svg" alt="city" />
-									Moscow
-								</p>
-								<p className={style.heroBlockInfoAboutParagraph}>
-									<img src="./Icons/briefcase.svg" alt="job" />
-									Full-time / Freelancer
-								</p>
-								<p className={style.heroBlockInfoAboutParagraph}>
-									<img src="./Icons/link.svg" alt="site" />
-									yusprog.com
-								</p>
-							</div>
+								<div className={style.heroBlockInfoAbout}>
+									<p className={style.heroBlockInfoAboutParagraph}>
+										<img src="./Icons/mail.svg" alt="email" />
+										nikitovich60@bk.ru
+									</p>
+									<p className={style.heroBlockInfoAboutParagraph}>
+										<img src="./Icons/map.svg" alt="city" />
+										Moscow
+									</p>
+									<p className={style.heroBlockInfoAboutParagraph}>
+										<img src="./Icons/briefcase.svg" alt="job" />
+										Full-time / Freelancer
+									</p>
+									<p className={style.heroBlockInfoAboutParagraph}>
+										<img src="./Icons/link.svg" alt="site" />
+										yusprog.com
+									</p>
+								</div>
 
-							<div className={style.heroBlockInfoSkill}>
-								<p className={style.heroBlockInfoSkillParag}>HTML</p>
-								<p className={style.heroBlockInfoSkillParag}>CSS</p>
-								<p className={style.heroBlockInfoSkillParag}>JS</p>
-								<p className={style.heroBlockInfoSkillParag}>REACT</p>
-							</div>
+								<div className={style.heroBlockInfoSkill}>
+									<p className={style.heroBlockInfoSkillParag}>HTML</p>
+									<p className={style.heroBlockInfoSkillParag}>CSS</p>
+									<p className={style.heroBlockInfoSkillParag}>JS</p>
+									<p className={style.heroBlockInfoSkillParag}>REACT</p>
+								</div>
 
-							<a
-								href="./Cv.pdf"
-								download="Askhab_CV.pdf"
-								className={style.heroBlockBtn}
-							>
-								Download CV
-								<img src="./Icons/download.svg" alt="" />
-							</a>
-						</div>
+								<a
+									href="./Cv.pdf"
+									download="Askhab_CV.pdf"
+									className={style.heroBlockBtn}
+								>
+									Download CV
+									<img src="./Icons/download.svg" alt="" />
+								</a>
+							</div>
 							<div ref={centerRef} className={style.heroBlockDeveloper}>
 								<div className={style.heroBlockDeveloperHedingBlock}>
 									<div className="heroBlockDeveloperHedingBlockText">
@@ -168,8 +168,6 @@ const Hero = () => {
 									</p>
 								</div>
 							</div>
-
-
 						</div>
 					</div>
 

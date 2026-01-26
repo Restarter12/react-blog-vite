@@ -35,6 +35,7 @@
 				justify-content: center;
 			}
 
+			
 
 			.heroBlockInfo {
 				width: 320px;
@@ -51,6 +52,7 @@
 				@media (max-width: 1280px) {
 					margin-right: 60px;
 				}
+				
 
 				.heroBlockInfoPerson {
 					.heroBlockInfoAvatar {
@@ -148,7 +150,7 @@
 					border-radius: 32px;
 					background: var(--White, rgba(255, 255, 255, 1));
 
-					&:hover{
+					&:hover {
 						background-color: black;
 						color: white;
 					}
@@ -161,6 +163,11 @@
 
 				@media (max-width: 1280px) {
 					display: flex;
+				}
+
+				@media (max-width: 768px) {
+					flex-wrap: wrap;
+					justify-content: center;
 				}
 
 				.heroBlockDeveloperHedingBlock {
@@ -278,6 +285,11 @@
 				background: rgba(26, 30, 35, 1);
 				padding: 48px 32px;
 
+				@media (max-width: 768px) {
+					align-items: flex-start;
+
+				}
+
 				.heroBlockDeveloperSkilsParag {
 					display: flex;
 					gap: 16px;
@@ -311,5 +323,5 @@
 }
 
 .hero-char {
-  display: inline-block;
+	display: inline-block;
 }
