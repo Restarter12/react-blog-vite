@@ -48,6 +48,10 @@
 				border-radius: 32px 0 32px 0;
 				margin-bottom: 64px;
 
+				@media (max-width: 430px) {
+					font-size: 28px;
+				}
+
 				@media (max-width: 425px) {
 					font-size: 28px;
 				}
