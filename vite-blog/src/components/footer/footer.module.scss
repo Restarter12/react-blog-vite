@@ -14,10 +14,18 @@
 		justify-content: space-evenly;
 		padding: 0 10px;
 
+		@media (max-width: 425px) {
+			flex-wrap: wrap;
+		}
+
 		.footerBlockList {
 			display: flex;
 			gap: 32px;
 			padding: 0;
+
+			@media (max-width: 425px) {
+				gap: 25px;
+			}
 
 			.footerBlockItem {
 				color: var(--White, rgba(255, 255, 255, 1));
@@ -48,6 +56,10 @@
 			line-height: 18px;
 			letter-spacing: 0%;
 			text-align: left;
+
+			@media (max-width:425px) {
+				font-size: 13px;
+			}
 		}
 	}
 }

@@ -90,7 +90,7 @@ const About = () => {
 
             {/* Правая картинка */}
             <div ref={rightRef} className={style.aboutBlockRightImg}>
-              <img src="./about-img.png" alt="" />
+              <img className={style.aboutBlockRightImg} src="./about-img.png" alt="" />
             </div>
 
           </div>

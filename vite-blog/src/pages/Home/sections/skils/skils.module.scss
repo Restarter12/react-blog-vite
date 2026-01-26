@@ -43,6 +43,11 @@
 			gap: 136px;
 			padding-bottom: 90px;
 
+			@media (max-width: 425px) {
+				flex-wrap: wrap;
+				gap: 80px;
+			}
+
 			.skilsBlockWorkWeb {
 				display: flex;
 				flex-direction: column;
@@ -137,6 +142,10 @@
 				grid-column-gap: 0px;
 				grid-row-gap: 32px;
 				padding-bottom: 64px;
+			}
+
+			@media (max-width: 425px) {
+				grid-column-gap: 40px;
 			}
 
 			.skilsBlockWorkImageItem {

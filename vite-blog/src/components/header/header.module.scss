@@ -23,8 +23,13 @@
 				letter-spacing: 0%;
 				text-align: left;
 				text-transform: capitalize;
+
 				@media (max-width: 768px) {
 					font-size: 27px;
+				}
+
+				@media (max-width: 425px) {
+					font-size: 22px;
 				}
 
 				.headerLogoSpan {
@@ -54,6 +59,11 @@
 				@media (max-width: 768px) {
 					margin-right: 55px;
 				}
+
+				@media (max-width: 425px) {
+					margin-right: 0;
+				}
+
 
 				.headerNavA {
 
@@ -87,6 +97,10 @@
 				display: flex;
 				gap: 32px;
 				align-items: center;
+
+				@media (max-width:425px) {
+					display: none;
+				}
 
 				.headerNavLinkA {
 					display: flex;
