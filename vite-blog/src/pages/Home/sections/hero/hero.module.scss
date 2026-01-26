@@ -26,6 +26,10 @@
 			text-transform: capitalize;
 			margin-bottom: 64px;
 
+			@media (max-width: 700px) {
+				display: none;
+			}
+
 			@media (max-width: 425px) {
 				display: none;
 			}
