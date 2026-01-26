@@ -214,6 +214,10 @@
 						text-transform: capitalize;
 						margin-left: 16px;
 
+						@media (max-width: 375px) {
+							font-size: 58px;
+						}
+
 						.heroBlockDeveloperHeadingSpan {
 							color: rgba(18, 247, 214, 1);
 						}
