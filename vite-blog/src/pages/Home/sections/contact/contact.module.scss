@@ -64,6 +64,11 @@
 				@media (max-width: 1024px) {
 					padding: 0 200px;
 				}
+
+				@media (max-width: 700px) {
+					padding: 0 50px;
+				}
+
 				@media (max-width: 425px) {
 					padding: 0 50px;
 				}
@@ -121,7 +126,7 @@
 				background: rgba(18, 247, 214, 1);
 				padding: 16px 32px;
 
-				color: rgba(41, 47, 54, 1 );
+				color: rgba(41, 47, 54, 1);
 
 				font-family: Ubuntu;
 				font-style: Regular;
@@ -132,7 +137,7 @@
 				text-align: left;
 				text-transform: capitalize;
 
-				&:hover{
+				&:hover {
 					background-color: white;
 				}
 			}
