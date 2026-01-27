@@ -1,7 +1,7 @@
 .footer {
 	background: rgba(26, 30, 35, 1);
-
-
+	bottom: 0;
+	position: relative;
 	.footerLine {
 		border: 1px solid var(--Grey, rgba(67, 69, 77, 1));
 		padding: 0;
