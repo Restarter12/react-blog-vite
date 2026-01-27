@@ -1,104 +1,135 @@
-import { useRef, useState, useLayoutEffect } from "react"
-import emailjs from "emailjs-com"
-import style from "./contact.module.scss"
-import Scroll from "../../../../components/ui/scrolImg/Scroll"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useRef, useState, useLayoutEffect } from "react";
+import emailjs from "emailjs-com";
+import ReCAPTCHA from "react-google-recaptcha";
+import style from "./contact.module.scss";
+import Scroll from "../../../../components/ui/scrolImg/Scroll";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
-  const formRef = useRef(null)
-  const sectionRef = useRef(null)
-  const headingRef = useRef(null)
-  const btnRef = useRef(null)
+  const formRef = useRef(null);
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const btnRef = useRef(null);
+  const recaptchaRef = useRef(null);
 
-  const [sent, setSent] = useState(false)
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [cooldown, setCooldown] = useState(false);
+  const [verified, setVerified] = useState(false);
 
   const sendEmail = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    emailjs.sendForm(
-      "service_md419ox",
-      "template_g2bin9s",
-      formRef.current,
-      "fYJn4VfJk-eOXYJ1L"
-    ).then(
-      () => setSent(true),
-      (error) => console.error(error)
-    )
-  }
+    // Honeypot check
+    if (formRef.current.honeypot.value) return;
+
+    // Rate limiting
+    if (cooldown) return;
+
+    // reCAPTCHA check
+    if (!verified) {
+      alert("Please verify that you are human!");
+      return;
+    }
+
+    setSending(true);
+
+    emailjs
+      .sendForm(
+        "service_md419ox",
+        "template_g2bin9s",
+        formRef.current,
+        "fYJn4VfJk-eOXYJ1L"
+      )
+      .then(
+        () => {
+          setSent(true);
+          setSending(false);
+          formRef.current.reset();
+          setVerified(false);
+          recaptchaRef.current.reset();
+
+          // Rate limiting: 30 секунд
+          setCooldown(true);
+          setTimeout(() => setCooldown(false), 30000);
+        },
+        (error) => {
+          console.error(error);
+          setSending(false);
+        }
+      );
+  };
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-
-      /* ===== SPLIT TEXT TO LETTERS ===== */
-      const text = headingRef.current
-      const letters = text.innerText.split("")
+      const text = headingRef.current;
+      const letters = text.innerText.split("");
       text.innerHTML = letters
-        .map(l => `<span class="char">${l === " " ? "&nbsp;" : l}</span>`)
-        .join("")
+        .map((l) => `<span class="char">${l === " " ? "&nbsp;" : l}</span>`)
+        .join("");
 
-      const chars = text.querySelectorAll(".char")
+      const chars = text.querySelectorAll(".char");
 
-      /* ===== INITIAL STATE ===== */
       gsap.set(chars, {
         opacity: 0,
         y: 40,
-        rotate: -10
-      })
+        rotate: -10,
+      });
 
       gsap.set(".contact-input", {
         opacity: 0,
         y: 30,
-        scale: 0.9
-      })
+        scale: 0.9,
+      });
 
       gsap.set(btnRef.current, {
         opacity: 0,
-        scale: 0.8
-      })
+        scale: 0.8,
+      });
 
-      /* ===== TIMELINE ===== */
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 75%",
-        }
-      })
+          once: true,
+        },
+      });
 
-      /* ===== LETTER ANIMATION ===== */
       tl.to(chars, {
         opacity: 1,
         y: 0,
         rotate: 0,
         stagger: 0.05,
         duration: 0.6,
-        ease: "back.out(1.7)"
-      })
+        ease: "back.out(1.7)",
+      });
 
-      /* ===== INPUTS CASCADE ===== */
-      tl.to(".contact-input", {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        stagger: 0.15,
-        duration: 0.6,
-        ease: "power4.out"
-      }, "-=0.2")
+      tl.to(
+        ".contact-input",
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          stagger: 0.15,
+          duration: 0.6,
+          ease: "power4.out",
+        },
+        "-=0.2"
+      );
 
-      /* ===== BUTTON ===== */
       tl.to(btnRef.current, {
         opacity: 1,
         scale: 1,
         duration: 0.6,
-        ease: "elastic.out(1, 0.5)"
-      })
+        ease: "elastic.out(1, 0.5)",
+      });
+    }, sectionRef);
 
-    }, sectionRef)
-
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section ref={sectionRef} id="contact" className={style.contact}>
@@ -106,7 +137,6 @@ const Contact = () => {
 
       <div className={style.contactBlock}>
         <div className="container">
-
           {/* ===== HEADING ===== */}
           <div className={style.contactBlockHeadnig}>
             <h2 ref={headingRef} className={style.contactHeading}>
@@ -129,11 +159,8 @@ const Contact = () => {
             </h2>
 
             <div className={style.contactSendMessInputs}>
-
               <div className={style.contactSendMessInputsBlock}>
-                <p className={style.contactSendMessInputsParag}>
-                  Your name *
-                </p>
+                <p className={style.contactSendMessInputsParag}>Your name *</p>
                 <input
                   className={`${style.contactSendMessInputsName} contact-input`}
                   type="text"
@@ -144,9 +171,7 @@ const Contact = () => {
               </div>
 
               <div className={style.contactSendMessInputsBlock}>
-                <p className={style.contactSendMessInputsParag}>
-                  Your email *
-                </p>
+                <p className={style.contactSendMessInputsParag}>Your email *</p>
                 <input
                   className={`${style.contactSendMessInputsEmail} contact-input`}
                   type="email"
@@ -168,14 +193,31 @@ const Contact = () => {
                 />
               </div>
 
+              {/* ===== Honeypot field ===== */}
+              <input
+                type="text"
+                name="honeypot"
+                style={{ display: "none" }}
+                autoComplete="off"
+              />
             </div>
 
+            {/* ===== reCAPTCHA ===== */}
+            <ReCAPTCHA
+              sitekey="6LcY_lcsAAAAAL0dKTcJMeAGlhCpVOa5CCMi22nT"
+              ref={recaptchaRef}
+              onChange={() => setVerified(true)}
+            />
+
+            {/* ===== BUTTON ===== */}
             <button
               ref={btnRef}
               type="submit"
               className={style.contactSendMessBtn}
+              disabled={sending || !verified || cooldown}
             >
-              Send Message <img src="./Icons/send.svg" alt="" />
+              {sending ? "Sending..." : "Send Message"}{" "}
+              <img src="./Icons/send.svg" alt="" />
             </button>
 
             {sent && (
@@ -184,11 +226,10 @@ const Contact = () => {
               </p>
             )}
           </form>
-
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
