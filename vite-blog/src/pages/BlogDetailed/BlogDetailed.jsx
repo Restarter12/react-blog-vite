@@ -56,7 +56,7 @@ const BlogDetailed = () => {
 					<div className={style.blogDetailTime}>
 						<p className={style.blogDetailDate}>Date: {new Date(post.created_at).toLocaleDateString()}</p>
 					</div>
-					<img src={post.image_url} width="720" height="400" alt={post.title} />
+					<img className={style.blogDetailBlockImg} src={post.image_url} alt={post.title} />
 					<p className={style.blogDetailParag}>{post.content}</p>
 					<p className={style.blogDetailTheme}><strong>Тема:</strong> {post.theme}</p>
 					<br />
